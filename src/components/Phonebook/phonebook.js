@@ -1,4 +1,4 @@
-import { Formik, } from 'formik';
+import { Formik, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import {Container, FormStyle, FieldStyle, SubmitStyled, LabelStaled} from './phonebook.styled'
 
@@ -25,6 +25,7 @@ return (
       <FieldStyle id="name" name="name" type="text"  title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
   required placeholder="Jane" />
       </LabelStaled>
+      <ErrorMessage name="name" component="div"/>
       
       <SubmitStyled type="submit">Add contact</SubmitStyled>
     </FormStyle>

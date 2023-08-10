@@ -8,6 +8,8 @@ export class App extends Component {
     name: ''
   }
 
+  handleChange
+
 
   render(){
     return(
