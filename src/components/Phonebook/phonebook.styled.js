@@ -2,16 +2,14 @@ import styled from 'styled-components';
 import {Form, Field} from 'formik'
 
 export const Container = styled.div`
-max-width: 480px;
-margin-left: auto;
-margin-right: auto;
-padding: 20px;
+border: thick double #32a1ce;
 `;
 
 export const FormStyle = styled(Form)`
 display: flex;
 flex-direction: column;
 max-width: 320px;
+padding: 15px 10px;
 `;
 
 export const LabelStaled = styled.label`
@@ -24,6 +22,7 @@ flex-direction: column;
 
 export const FieldStyle = styled(Field)`
 margin-top: 10px;
+margin-bottom: 10px;
 padding: 10px;
 border-radius: 20px;
 border: 2px solid rgb(21 31 216 / 30%);
@@ -40,12 +39,9 @@ font-size: 16px;
 
 export const SubmitStyled = styled.button`
 width:50%;
-margin-left: auto;
-margin-right: auto;
 padding: 15px 10px;
 border: none;
 border-radius: 50px;
-margin-top: 10px;
 
 font-family: Cantarell;
 font-weight: normal;

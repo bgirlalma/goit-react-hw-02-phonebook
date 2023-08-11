@@ -1,25 +1,22 @@
+import {StyledItems, StyledTitle, Container, StyledUl } from './contacts.styled'
 const { Component } = require("react")
-
 export class BookContacts extends Component {
     render(){
-        const {title, children} = this.props;
+        const {title, children, contacts} = this.props;
         return(
-            <div>
-                <h2>{title}</h2>
+            <Container>
+                <StyledTitle>{title}</StyledTitle>
                 {children}
 
-                <ul>
-                    <li>Стив Джобс</li>
-                    <li>Eminem</li>
-                    <li>Бейонсе</li>
-                    <li>The Weeknd</li>
-                    <li>Justin Bieber</li>
-                    <li>Margo Robbi</li>
-                    <li>As$p Rocky</li>
-                    <li>Aron Paper</li>
-                    <li>Kerem Bursin</li>
-                </ul>
-            </div>
+                <StyledUl>
+                 {contacts.map(contact => (
+                     <StyledItems key={contact.id}>{contact.name}: {contact.number};</StyledItems>
+                 )
+                 )}
+
+              
+                </StyledUl>
+            </Container>
         )
     }
 }
