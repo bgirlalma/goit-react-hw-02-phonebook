@@ -31,9 +31,10 @@ export class InputPhonebook extends Component {
       validationSchema={SignupSchema}
   
      onSubmit={(values, actions) => {
+      console.log({values})
       onSearchContacts({...values, id: nanoid()});
       actions.resetForm();
-      this.props.changeFilter(values.name);
+
      }}
     >
       <FormStyle>
