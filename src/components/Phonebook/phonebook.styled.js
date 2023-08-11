@@ -5,6 +5,17 @@ export const Container = styled.div`
 border: thick double #32a1ce;
 `;
 
+export const PhoneTitle = styled.div`
+font-family: Cantarell;
+font-weight: bold;
+font-size: 24px;
+
+display: flex;
+justify-content: center;
+color: rgb(142, 13, 138);
+text-decoration: underline;
+`;
+
 export const FormStyle = styled(Form)`
 display: flex;
 flex-direction: column;

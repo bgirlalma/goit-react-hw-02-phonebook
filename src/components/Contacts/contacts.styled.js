@@ -9,9 +9,10 @@ display:flex;
 justify-content: center;
 font-family: Oxygen;
 font-weight: bold;
-font-size: 20px;
+font-size: 24px;
 margin-bottom: 5px;
 color: rgb(142, 13, 138);
+text-decoration: underline;
 `;
 
 export const StyledUl = styled.ul`
