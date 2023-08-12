@@ -4,7 +4,6 @@ import {LabelFilter, FilterWrapper, FilterInput} from './filter.styled';
 export class FilterContacts extends Component {
 render() {
     const {value, onChange} = this.props;
-    console.log({value})
 return (
 <FilterWrapper>
 <LabelFilter htmlFor="filter">Find contacts by name</LabelFilter>  

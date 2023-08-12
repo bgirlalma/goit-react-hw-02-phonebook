@@ -13,27 +13,27 @@ export class App extends Component {
   }
 
   changeFilter = newName => {
-    console.log({newName})
   this.setState({filter: newName})
   }
 
   addContacts= addNewContacts => {
+    const existingContactNames = this.state.contacts.map(contact => contact.name);
+
+    if (existingContactNames.includes(addNewContacts.name)) {
+      alert('Такий контакт вже існує в вашому списку!');
+      return;
+    }
     this.setState({contacts: [...this.state.contacts, addNewContacts]})
-    console.log(addNewContacts)
   }
  
-
-
   render(){
    const {filter, contacts} = this.state;
-   console.log(this.state.contacts)
    const visible = contacts.filter(contact => contact.name.toLowerCase().includes(filter.toLowerCase()));
-   console.log(filter.name)
     return(
       <div className="wrapper-container">
-  <InputPhonebook title="Phonebook" onSearchContacts={this.addContacts} changeFilter={this.changeFilter}/>
+  <InputPhonebook title="Phonebook" onSearchContacts={this.addContacts}/>
   <FilterContacts value={filter} onChange={this.changeFilter}/>
-  <BookContacts title="Contacts" contacts={visible} searchFilterName={filter.name} changeFilter={this.changeFilter}/> 
+  <BookContacts title="Contacts" contacts={visible}/> 
   <GlobalStyled/>
       </div>
     )
