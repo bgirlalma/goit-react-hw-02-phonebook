@@ -26,6 +26,11 @@ export class App extends Component {
     this.setState({contacts: [...this.state.contacts, addNewContacts]})
   }
  
+  deleteContacts =id => {
+    this.setState(prevState => ({
+      contacts: prevState.contacts.filter(contact => contact.id !== id)
+    }))
+  }
   render(){
    const {filter, contacts} = this.state;
    const visible = contacts.filter(contact => contact.name.toLowerCase().includes(filter.toLowerCase()));
@@ -33,7 +38,7 @@ export class App extends Component {
       <div className="wrapper-container">
   <InputPhonebook title="Phonebook" onSearchContacts={this.addContacts}/>
   <FilterContacts value={filter} onChange={this.changeFilter}/>
-  <BookContacts title="Contacts" contacts={visible}/> 
+  <BookContacts title="Contacts" contacts={visible} onDeleteContact={this.deleteContacts}/>
   <GlobalStyled/>
       </div>
     )

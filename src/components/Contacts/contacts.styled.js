@@ -30,5 +30,13 @@ color: rgb(142, 13, 138);
 
 `;
 
+export const ButtonDelete = styled.button`
+padding: 2px 2px;
+margin-left: 10px;
+border: 2px solid red;
+cursor: pointer;
+
+`;
+
 
 
